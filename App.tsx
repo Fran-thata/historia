@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
         {/* Hero Content */}
         <div className="relative z-20 max-w-4xl mx-auto pt-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-[#f39c12] mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,1)] font-serif tracking-tight animate-fade-in-up">
+          <h1 className="text-4xl md:text-7xl font-bold text-[#f39c12] mb-6 drop-shadow-[0_4px_8px_rgba(0,0,0,1)] font-serif tracking-tight animate-fade-in-up">
             EL SEGLE XIX A ESPANYA
           </h1>
           
@@ -56,8 +56,8 @@ const App: React.FC = () => {
       {/* Main Timeline Container */}
       <main className="max-w-7xl mx-auto relative pb-20 px-4">
         
-        {/* The Central Line */}
-        <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#f39c12] via-[#e74c3c] to-[#3498db] shadow-[0_0_20px_rgba(243,156,18,0.5)] rounded-full z-0 origin-top animate-[scaleY_1.5s_ease-out]" />
+        {/* The Central Line - Left aligned on mobile, Centered on desktop */}
+        <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-[#f39c12] via-[#e74c3c] to-[#3498db] shadow-[0_0_20px_rgba(243,156,18,0.5)] rounded-full z-0 origin-top animate-[scaleY_1.5s_ease-out]" />
 
         {/* Render Periods */}
         {TIMELINE_DATA.map((period, index) => (

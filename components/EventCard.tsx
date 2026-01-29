@@ -41,14 +41,21 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
   return (
     <div 
       ref={cardRef} 
-      className={`flex w-full mb-12 relative items-center justify-between ${isRight ? 'flex-row' : 'flex-row-reverse'}`}
+      className={`
+        flex w-full mb-12 relative items-center 
+        justify-start md:justify-between 
+        flex-row ${isRight ? 'md:flex-row' : 'md:flex-row-reverse'}
+      `}
     >
       
-      {/* Empty space for the opposite side */}
+      {/* Empty space for the opposite side - Hidden on mobile, visible on desktop */}
       <div className="hidden md:block w-5/12" />
 
       {/* Center Marker */}
-      <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center z-10">
+      <div className={`
+        absolute transform -translate-x-1/2 flex items-center justify-center z-10
+        left-8 md:left-1/2
+      `}>
         <div 
           className={`
             rounded-full border-4 border-[#1e204a] shadow-[0_0_10px_rgba(59,130,246,0.5)]
@@ -63,7 +70,13 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
       </div>
 
       {/* Content Card */}
-      <div className={`w-full md:w-5/12 px-4 ${isRight ? 'md:text-left' : 'md:text-right'}`}>
+      <div 
+        className={`
+          w-full md:w-5/12 
+          pl-20 md:px-4 
+          text-left ${isRight ? 'md:text-left' : 'md:text-right'}
+        `}
+      >
         <div 
           className={`
             relative overflow-hidden
@@ -86,7 +99,7 @@ const EventCard: React.FC<EventCardProps> = ({ event, index }) => {
             {event.description}
           </p>
 
-          {/* Optional Image "unida al cuadrado" (attached to the square) */}
+          {/* Optional Image */}
           {event.imageUrl && (
             <div className="mt-4 rounded-md overflow-hidden border border-[#3b82f6]/50">
               <img 
